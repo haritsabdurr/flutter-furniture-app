@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uts_furnity/constants.dart';
 import 'package:uts_furnity/screens/login/login_screen.dart';
+import 'package:uts_furnity/screens/register/register_screen.dart';
+
 
 class Body extends StatelessWidget {
   @override
@@ -91,24 +94,34 @@ class Body extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            const Text.rich(
-              TextSpan(
-                text: 'Dont have an account? ',
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 16,
-                  fontFamily: 'Poppins'
-                ),
-                children: [
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterScreen()),
+                );
+              },
+              child: const Text.rich(
                   TextSpan(
-                    text: 'Create Account',
+                    text: 'Dont have an account? ',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline
-                    )
-                  ),
-                ]
+                      fontWeight: FontWeight.normal,
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      color: Colors.black87
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Create Account',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline
+                        ),
+                      )
+                    ]
+                  )
               ),
+
             ),
           ],
         ),
